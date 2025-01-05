@@ -8,52 +8,78 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background: url('https://images.unsplash.com/photo-1532635267-0a2c38334699?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg0OXwwfDF8c2VhcmNofDJ8fGNvZGUlMjBpbnRlcmNlcHRpb258ZW58MHx8fHwxNjYzNzMwMjg&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+  background-size: cover; /* Ensure the image covers the whole page */
   color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative; /* For overlay positioning */
+  height: 100vh; /* Full viewport height */
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+}
+
+/* Overlay to darken the background */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1; /* Keep the overlay behind the content */
 }
 
 /* Header Section */
 header {
-  background-color: #2c3e50;
   color: white;
   text-align: center;
-  padding: 50px 0;
+  padding: 80px 0;
+  border-bottom: 4px solid #3498db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 3.8em;
+  margin-bottom: 10px;
 }
 
 header .title {
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-top: 10px;
 }
 
 header .subtitle {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-top: 10px;
+  font-weight: 300;
+  opacity: 0.8;
 }
 
 /* About Section */
 .about {
   background-color: #ecf0f1;
   padding: 50px 0;
+  border-bottom: 1px solid #ddd;
 }
 
 .about h2 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 20px;
+  color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .about p {
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.8;
   text-align: center;
   max-width: 900px;
@@ -64,23 +90,45 @@ header .subtitle {
 .skills {
   padding: 50px 0;
   background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
 }
 
 .skills h2 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 20px;
+  color: #3498db;
 }
 
 .skills ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skills li {
-  font-size: 1.2em;
-  margin: 10px 0;
+  font-size: 1.3em;
+  margin: 10px 30px;
   text-align: center;
+  color: #333;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skills li svg {
+  font-size: 2em;
+  color: #3498db;
+  margin-bottom: 15px;
 }
 
 /* Projects Section */
@@ -91,26 +139,37 @@ header .subtitle {
 
 .projects h2 {
   text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  color: #3498db;
 }
 
 .projects ul {
   list-style-type: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .projects li {
   background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .projects h3 {
-  font-size: 2em;
+  font-size: 2.2em;
   margin-bottom: 10px;
+  color: #2c3e50;
 }
 
 .projects p {
@@ -123,8 +182,9 @@ header .subtitle {
   text-decoration: none;
   background-color: #3498db;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 5px;
+  font-size: 1.1em;
   transition: background-color 0.3s ease;
 }
 
@@ -140,19 +200,22 @@ header .subtitle {
 
 .contact h2 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 20px;
+  color: #3498db;
+  text-transform: uppercase;
 }
 
 .contact p {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 10px;
 }
 
 .contact a {
   color: #3498db;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .contact a:hover {
@@ -165,11 +228,59 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
 
 footer p {
-  font-size: 1em;
+  font-size: 1.1em;
+}
+
+/* Social Icons Section */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 1.8em;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #3498db;
+}
+
+.social-icons i {
+  padding: 10px;
+  background-color: #2c3e50;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons i:hover {
+  background-color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+  .projects ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2em;
+  }
+  header .title {
+    font-size: 1.3em;
+  }
+  .projects ul {
+    grid-template-columns: 1fr;
+  }
 }
