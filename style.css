@@ -16,6 +16,7 @@ body {
 
 /* Header Section */
 header {
+  position: relative;
   background: url('https://images.unsplash.com/photo-1521747116042-5a810fda9664?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg0OXwwfDF8c2VhcmNofDN8fGNvZGluZyUyMGVtcGxveWVlJTIwd29ya3NwfGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
   color: white;
   text-align: center;
@@ -24,74 +25,75 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  font-size: 3.8em;
-  margin-bottom: 10px;
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
 }
 
-header .title {
-  font-size: 1.8em;
-  margin-top: 10px;
-}
-
-header .subtitle {
-  font-size: 1.3em;
-  margin-top: 10px;
-  font-weight: 300;
-  opacity: 0.8;
+header h1, header .title, header .subtitle {
+  position: relative;
+  z-index: 2;
 }
 
 /* About Section */
 .about {
+  position: relative;
   background: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg0OXwwfDF8c2VhcmNofDk0fHxjYXBwdXJlJTIwY29kZWZpbx8ZW58MHx8fHwxNjYzNzMwMjg&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
   color: white;
   padding: 100px 0;
 }
 
-.about h2 {
-  text-align: center;
-  font-size: 2.8em;
-  margin-bottom: 20px;
-  color: #3498db;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.about::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
 }
 
-.about p {
-  font-size: 1.2em;
-  line-height: 1.8;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
+.about h2, .about p {
+  position: relative;
+  z-index: 2;
 }
 
 /* Skills Section */
 .skills {
+  position: relative;
   background: url('https://images.unsplash.com/photo-1579546928680-9b3e0bc11c1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg0OXwwfDF8c2VhcmNofDJ8fGFiY3RyYWN0fGVufDB8fHx8fDE2NjM3MzAyOA&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
   color: white;
   padding: 100px 0;
 }
 
-.skills h2 {
-  text-align: center;
-  font-size: 2.8em;
-  margin-bottom: 20px;
-  color: #3498db;
+.skills::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
 }
 
-.skills ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.skills h2, .skills ul {
+  position: relative;
+  z-index: 2;
 }
 
 .skills li {
   font-size: 1.3em;
   margin: 10px 30px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6); /* Darker background for skills */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -111,24 +113,26 @@ header .subtitle {
 
 /* Projects Section */
 .projects {
+  position: relative;
   background: url('https://images.unsplash.com/photo-1573496797653-e9e87c240f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg0OXwwfDF8c2VhcmNofDN8fGhlbHN8ZW58MHx8fHwxNjYzNzMwMjg&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
   color: white;
   padding: 100px 0;
 }
 
-.projects h2 {
-  text-align: center;
-  font-size: 2.8em;
-  margin-bottom: 40px;
-  color: #3498db;
+.projects::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
 }
 
-.projects ul {
-  list-style-type: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+.projects h2, .projects ul {
+  position: relative;
+  z-index: 2;
 }
 
 .projects li {
@@ -173,23 +177,26 @@ header .subtitle {
 
 /* Contact Section */
 .contact {
+  position: relative;
   background: url('https://images.unsplash.com/photo-1591104586983-ffbd1a3782ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg0OXwwfDF8c2VhcmNofDk5fHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNjYzNzMwMjg&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
   color: white;
   padding: 100px 0;
 }
 
-.contact h2 {
-  text-align: center;
-  font-size: 2.8em;
-  margin-bottom: 20px;
-  color: #3498db;
-  text-transform: uppercase;
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
 }
 
-.contact p {
-  text-align: center;
-  font-size: 1.3em;
-  margin-bottom: 10px;
+.contact h2, .contact p {
+  position: relative;
+  z-index: 2;
 }
 
 .contact a {
